@@ -2,7 +2,7 @@ import React,{useState,useContext}from 'react';
 import "./login.css"
 import {useHistory} from "react-router-dom";
 import {LoginContext}from"../../components/helper/context";
-import Axios from"axios"
+import Axios from "axios"
 
 const Login = () => {
 
