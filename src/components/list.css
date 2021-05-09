@@ -1,0 +1,12 @@
+.saunaroom{
+    display: flex;
+    flex-direction: column;
+    padding:5%;
+}
+
+.rate{
+    display: flex;
+    flex-direction: row;
+  
+}
+
