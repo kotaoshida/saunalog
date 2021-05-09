@@ -24,7 +24,7 @@ function Register () {
                 onChange={(e)=>{setUsername(e.target.value)}}/>
                 <input type="text" placeholder="パスワード" 
                 onChange={(e)=>{setPassword(e.target.value)}}/>
-               <ContainedButtons onClick={regist}/>
+               <ContainedButtons regist={regist}/>
             </div>
         </div>
         
