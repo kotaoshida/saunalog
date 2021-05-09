@@ -1,6 +1,5 @@
 .rate{
-    display: flex;
-    flex-direction: row;
+
 
 }
 .eachRate{
@@ -10,9 +9,26 @@ padding-left: 20px;
 padding-right: 20px;
 }
 
-.saunaName{
 
-}
 .memo{
     margin-top:20px;
+}
+
+@media screen and (max-width: 959px) {
+	/* 959px以下に適用されるCSS（タブレット用） */
+
+}
+@media screen and (max-width: 480px) {
+	/* 480px以下に適用されるCSS（スマホ用） */
+    .rate{
+        display: flex !important;
+        flex-direction: column !important;
+
+
+        }
+
+        .eachRate{
+            margin: 10px;
+        }
+        
 }

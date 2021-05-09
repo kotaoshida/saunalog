@@ -118,20 +118,18 @@ export default function CustomizedDialogs(props) {
           <h1>{sauna}</h1>
           </div>
           <div className="rate">
-              <div className="eachRate">
-            サ室の評価
-          <Rating name="size-small" defaultValue={2}  onChange={(e)=>{setSaunaRoom(e.target.value)}}/>
-              </div>
-          <div className="eachRate">
-              水風呂の評価
-          <Rating name="size-medium" defaultValue={2} onChange={(e)=>{setWaterBath(e.target.value)}}/>
-          </div>
-          <div className="eachRate">
-              ととのいスポットの評価
-          <Rating name="size-large" defaultValue={2} onChange={(e)=>{setWind(e.target.value)}}/>
-          </div>
-
-
+                <div className="eachRate">
+              サ室の評価
+            <Rating name="size-small" defaultValue={2}  onChange={(e)=>{setSaunaRoom(e.target.value)}}/>
+                </div>
+            <div className="eachRate">
+                水風呂の評価
+            <Rating name="size-medium" defaultValue={2} onChange={(e)=>{setWaterBath(e.target.value)}}/>
+            </div>
+            <div className="eachRate">
+                ととのいスポットの評価
+            <Rating name="size-large" defaultValue={2} onChange={(e)=>{setWind(e.target.value)}}/>
+            </div>
           </div>
           <div className="memo">
           <TextField

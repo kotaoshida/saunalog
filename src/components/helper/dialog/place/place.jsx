@@ -50,7 +50,7 @@ export default  function ContainedButtons(props) {
   return (
     <div className={classes.root}>
       
-      <Button variant="contained" color="primary" onClick={getNearSauna}>
+      <Button variant="contained" color="primary" onClick={getNearSauna} fullWidth={true}>
          今いるサウナ
       </Button>
       
