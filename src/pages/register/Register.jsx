@@ -1,7 +1,7 @@
 import React,{useState} from 'react';
 import "./register.css"
 import Axios from "axios";
-
+import ContainedButtons from"../../components/button"
 
 function Register () {
     const [username,setUsername]=useState("");
@@ -12,7 +12,9 @@ function Register () {
             username:username,
             password:password,
             }).then((res)=>{
-            console.log(res)})
+            console.log(res)
+            location.href="https://hardcore-franklin-760778.netlify.app/"
+                })
     }
 
     return (
@@ -22,7 +24,7 @@ function Register () {
                 onChange={(e)=>{setUsername(e.target.value)}}/>
                 <input type="text" placeholder="password..." 
                 onChange={(e)=>{setPassword(e.target.value)}}/>
-                <button onClick={regist}>Register</button>
+               <ContainedButtons onClick={regist}/>
             </div>
         </div>
         
