@@ -13,16 +13,16 @@ function Register () {
             password:password,
             }).then((res)=>{
             console.log(res)
-            location.href="https://hardcore-franklin-760778.netlify.app/"
+            window.location.href="https://hardcore-franklin-760778.netlify.app/"
                 })
     }
 
     return (
         <div className="Register">
             <div className="RegisterForm">
-                <input type="text" placeholder="username..." 
+                <input type="text" placeholder="なまえ" 
                 onChange={(e)=>{setUsername(e.target.value)}}/>
-                <input type="text" placeholder="password..." 
+                <input type="text" placeholder="パスワード" 
                 onChange={(e)=>{setPassword(e.target.value)}}/>
                <ContainedButtons onClick={regist}/>
             </div>
