@@ -1,10 +1,11 @@
 .Register{
-    width:60%;
+    width:100%;
     height:750px;
     display: flex;
     flex-direction: column;
     justify-self: center;
     align-items: center;
+    text-align: center;
 }
 
 .RegisterForm{
@@ -13,13 +14,17 @@
     flex-direction: column;
     align-items: center;
     justify-self: center;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.Registwrap{
+    margin-top: 100px;
 }
 
 .RegisterForm input,button{
-    margin: 10px;
-    width: 50%;
+    margin-top: 10px;
+    width: 80%;
     height: 50px;
     font-size: 20px;
 

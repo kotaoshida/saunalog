@@ -19,12 +19,14 @@ function Register () {
 
     return (
         <div className="Register">
+            <div className="Registwrap">
             <div className="RegisterForm">
                 <input type="text" placeholder="なまえ" 
                 onChange={(e)=>{setUsername(e.target.value)}}/>
                 <input type="text" placeholder="パスワード" 
                 onChange={(e)=>{setPassword(e.target.value)}}/>
                <ContainedButtons regist={regist}/>
+            </div>
             </div>
         </div>
         
