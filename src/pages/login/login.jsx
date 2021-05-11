@@ -3,6 +3,8 @@ import "./login.css"
 import {useHistory} from "react-router-dom";
 import {LoginContext}from"../../components/helper/context";
 import Axios from "axios"
+import BasicTextFields from"../../components/testfield"
+import ContainedButtons from"../../components/button"
 
 const Login = () => {
 
@@ -34,14 +36,13 @@ const Login = () => {
     return (
         <div className="login">
              <div className="loginForm">
-                <input type="text" placeholder="username..." 
-                onChange={(e)=>{setUsername(e.target.value)}}/>
-                <input type="text" placeholder="password..."
-                onChange={(e)=>{setPassword(e.target.value)}}/>
-                <button onClick={login}>login</button>
+             <BasicTextFields label="なまえ" func={(e)=>{setUsername(e.target.value)}}/>
+                <BasicTextFields label="パスワード" func={(e)=>{setPassword(e.target.value)}}/>
+                <div  className="registButton">
+               <ContainedButtons func={login} text={"ログイン"}/>
                 {message}
             </div>
-           
+           </div>
         </div>
     );
 };

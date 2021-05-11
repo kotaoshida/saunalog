@@ -2,6 +2,7 @@ import React,{useState} from 'react';
 import "./register.css"
 import Axios from "axios";
 import ContainedButtons from"../../components/button"
+import BasicTextFields from"../../components/testfield"
 
 function Register () {
     const [username,setUsername]=useState("");
@@ -13,7 +14,7 @@ function Register () {
             password:password,
             }).then((res)=>{
             console.log(res)
-            window.location.href="https://hardcore-franklin-760778.netlify.app/"
+            window.location.href="https://hardcore-franklin-760778.netlify.app/login"
                 })
     }
 
@@ -21,11 +22,12 @@ function Register () {
         <div className="Register">
             <div className="Registwrap">
             <div className="RegisterForm">
-                <input type="text" placeholder="なまえ" 
-                onChange={(e)=>{setUsername(e.target.value)}}/>
-                <input type="text" placeholder="パスワード" 
-                onChange={(e)=>{setPassword(e.target.value)}}/>
-               <ContainedButtons regist={regist}/>
+
+                <BasicTextFields label="なまえ" func={(e)=>{setUsername(e.target.value)}}/>
+                <BasicTextFields label="パスワード" func={(e)=>{setPassword(e.target.value)}}/>
+                <div  className="registButton">
+               <ContainedButtons func={regist} text={"登録する"}/>
+               </div>
             </div>
             </div>
         </div>

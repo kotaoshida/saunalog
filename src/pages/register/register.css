@@ -6,13 +6,14 @@
     justify-self: center;
     align-items: center;
     text-align: center;
+   
 }
 
 .RegisterForm{
     margin-top: 100px;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    
     justify-self: center;
     margin: 0 auto;
     text-align: center;
@@ -24,8 +25,12 @@
 
 .RegisterForm input,button{
     margin-top: 10px;
-    width: 80%;
+  
     height: 50px;
-    font-size: 20px;
+   
 
+}
+
+.registButton{
+    margin-top: 20px;
 }

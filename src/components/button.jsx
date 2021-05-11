@@ -16,8 +16,8 @@ export default function ContainedButtons(props) {
 
   return (
     <div className={classes.root}>
-      <Button variant="contained" color="primary" onClick={props.regist} fullWidth={true}>
-        登録する
+      <Button variant="contained" color="primary" onClick={props.func} fullWidth={true}>
+        {props.text}
       </Button>
     </div>
   );
