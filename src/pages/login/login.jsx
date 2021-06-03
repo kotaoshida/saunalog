@@ -6,6 +6,7 @@ import Axios from "axios"
 import BasicTextFields from"../../components/testfield"
 import ContainedButtons from"../../components/button"
 
+
 const Login = () => {
 
     const {logined,setLogined}=useContext(LoginContext);
@@ -21,11 +22,12 @@ const Login = () => {
         Axios.post("https://saunalogs.herokuapp.com/user/login",{
             username:username,
             password:password,
-            }).then((res)=>{
-            if(res.data.login){
+            },{ withCredentials: true }).then((res)=>{
+            if(res){
                 setLogined(true);
                 localStorage.setItem("username",username);
                 history.push("/");
+                console.log("a")
                 console.log(res)
             }else{
                 setMessage(res.data.message);
@@ -35,6 +37,7 @@ const Login = () => {
 
     return (
         <div className="login">
+        
              <div className="loginForm">
              <BasicTextFields label="なまえ" func={(e)=>{setUsername(e.target.value)}}/>
                 <BasicTextFields label="パスワード" func={(e)=>{setPassword(e.target.value)}}/>

@@ -7,16 +7,17 @@ import AlignItemsList from"../../components/list"
 
 
 
+let username ="a";
 
 const Home = () => {
 
     const[list,setList]=useState([]);
-    const username = localStorage.getItem("username");
+//    const username = localStorage.getItem("username");
     
     useEffect(()=>{
-        Axios.get("https://saunalogs.herokuapp.com/upload",{params:username}
-        ).then((res)=>{
+        Axios.get("https://saunalogs.herokuapp.com/user",{withCredentials:"include"}).then((res)=>{
             setList(res.data);
+            username = res.data.username
         })
     },[]);
 

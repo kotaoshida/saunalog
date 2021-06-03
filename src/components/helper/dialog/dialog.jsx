@@ -35,8 +35,8 @@ const DialogTitle = withStyles(styles)((props) => {
     <MuiDialogTitle disableTypography className={classes.root} {...other}>
       <Typography variant="h6">{children}</Typography>
       {onClose ? (
-        <IconButton aria-label="close" className={classes.closeButton} onClick={onClose}>
-          <CloseIcon />
+        <IconButton aria-label="close" className={classes.closeButton} onClick={onClose} fullWidth={true}>
+          <CloseIcon/>
         </IconButton>
       ) : null}
     </MuiDialogTitle>
@@ -74,6 +74,11 @@ export default function CustomizedDialogs(props) {
     setOpen(false);
   };
 
+  const close = () => {
+    
+  setOpen(false);
+};
+
   function setsauna (name) {
                 setSauna(name);
   }
@@ -98,11 +103,11 @@ export default function CustomizedDialogs(props) {
 
   return (
     <div>
-      <Button variant="outlined" color="primary" onClick={handleClickOpen}>
+      <Button variant="outlined" color="primary" onClick={handleClickOpen} fullWidth={true}>
         サウナを追加
       </Button>
       <Dialog onClose={handleClose} aria-labelledby="customized-dialog-title" open={open} maxWidth={true} >
-        <DialogTitle id="customized-dialog-title" onClose={handleClose} width="20%">
+        <DialogTitle id="customized-dialog-title" onClose={close} fullWidth={true}>
           サウナログを追加しよう！
         </DialogTitle>
         <DialogContent dividers>

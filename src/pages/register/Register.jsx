@@ -20,6 +20,7 @@ function Register () {
 
     return (
         <div className="Register">
+            
             <div className="Registwrap">
             <div className="RegisterForm">
 
