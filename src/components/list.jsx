@@ -45,6 +45,7 @@ export default function AlignItemsList(props) {
                     className={classes.inline}
                     color="textPrimary"
                   >
+                    <div>日付：{val.date}</div>
                 <div className="rate">
                  <div className="saunaroom">
                     サ室の評価
@@ -62,13 +63,15 @@ export default function AlignItemsList(props) {
                     <Edit sauna={val.sauna}  saunarate={val.saunaroomrate} waterbathrate={val.waterbathrate} windrate={val.windrate} memo={val.memo} id={val.id} setList={props.setList}/>
                     <DraggableDialog id={val.id} setList={props.setList}/>
                  </div>
+                 
                   </Typography>
+                  {val.totonotta==1?<h3>ととのった！</h3>:<h3>ととのえなかった。。</h3>}
                   <h4 >ひとことメモ：{val.memo}</h4>
                 </React.Fragment>
               }
             />
           </ListItem>
-
+               
           <Divider variant="inset" component="li" />
           </div>)
         })}

@@ -15,6 +15,8 @@ import Rating from '@material-ui/lab/Rating';
 import Axios from "axios"
 import TextField from '@material-ui/core/TextField';
 import ContainedButtons from"./place/place"
+import RadioButtonsGroup from"../../totonoi"
+import MaterialUIPickers from"./date"
 
 const styles = (theme) => ({
   root: {
@@ -57,13 +59,23 @@ const DialogActions = withStyles((theme) => ({
   },
 }))(MuiDialogActions);
 
+
+function formatDate(dt) {
+  var y = dt.getFullYear();
+  var m = ('00' + (dt.getMonth()+1)).slice(-2);
+  var d = ('00' + dt.getDate()).slice(-2);
+  return (y + '-' + m + '-' + d);
+}
+
 export default function CustomizedDialogs(props) {
   const [open, setOpen] = React.useState(false);
-  const [sauna,setSauna]=useState("");
+  const [sauna,setSauna]=useState(null);
   const [waterBath,setWaterBath]=useState(0);
   const [saunaRoom,setSaunaRoom]=useState(0);
   const [wind,setWind]=useState(0);
   const [memo,setMemo]=useState("");
+  const [totonoi,setTotonoi]=useState(null)
+  const [date,setDate]=useState(null)
  const obj ={sauna:sauna,saunaroomrate:saunaRoom,waterbathrate:waterBath,windrate:wind}
 
   const handleClickOpen = () => {
@@ -85,14 +97,17 @@ export default function CustomizedDialogs(props) {
 
   const registLog = ()=>{
 
-    Axios.post("https://saunalogs.herokuapp.com/upload",{
+    Axios.post("http://localhost:3001/upload",{
         sauna:sauna,
         saunaroomrate:saunaRoom,
         waterbathrate:waterBath,
         windrate:wind,
         username:localStorage.getItem("username"),
-        memo:memo
-        }).then(()=>{ Axios.get("https://saunalogs.herokuapp.com/upload",{params:localStorage.getItem("username")}
+        memo:memo,
+        totonotta:Number(totonoi),
+        date:date
+
+        }).then(()=>{ Axios.get("http://localhost:3001/upload",{params:localStorage.getItem("username")}
         ).then((res)=>{
             props.setList(res.data);
             setSauna("")
@@ -122,6 +137,7 @@ export default function CustomizedDialogs(props) {
           <div className="saunaName">
           <h1>{sauna}</h1>
           </div>
+          <MaterialUIPickers setDate={setDate} date={date}/>
           <div className="rate">
                 <div className="eachRate">
               サ室の評価
@@ -136,6 +152,11 @@ export default function CustomizedDialogs(props) {
             <Rating name="size-large" defaultValue={2} onChange={(e)=>{setWind(e.target.value)}}/>
             </div>
           </div>
+
+            <div>
+            <RadioButtonsGroup totonoi={totonoi} setTotonoi={setTotonoi}/>
+            </div>
+
           <div className="memo">
           <TextField
           id="standard-textarea"
