@@ -121,7 +121,7 @@ export default function CustomizedDialogs(props) {
     <div>
       <FloatingActionButtons onclick={handleClickOpen}/>
 
-      <Dialog onClose={handleClose} aria-labelledby="customized-dialog-title" open={open} maxWidth={true} >
+      <Dialog onClose={close} aria-labelledby="customized-dialog-title" open={open} maxWidth={true} >
         <DialogTitle id="customized-dialog-title" onClose={close} fullWidth={true}>
           サウナログを追加しよう！
         </DialogTitle>
