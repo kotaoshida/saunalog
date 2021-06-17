@@ -17,6 +17,7 @@ import TextField from '@material-ui/core/TextField';
 import ContainedButtons from"./place/place"
 import RadioButtonsGroup from"../../totonoi"
 import MaterialUIPickers from"./date"
+import FloatingActionButtons from "../../../components/floatbutton";
 
 const styles = (theme) => ({
   root: {
@@ -97,7 +98,7 @@ export default function CustomizedDialogs(props) {
 
   const registLog = ()=>{
 
-    Axios.post("http://localhost:3001/upload",{
+    Axios.post("https://saunalogs.herokuapp.com/upload",{
         sauna:sauna,
         saunaroomrate:saunaRoom,
         waterbathrate:waterBath,
@@ -107,7 +108,7 @@ export default function CustomizedDialogs(props) {
         totonotta:Number(totonoi),
         date:date
 
-        }).then(()=>{ Axios.get("http://localhost:3001/upload",{params:localStorage.getItem("username")}
+        }).then(()=>{ Axios.get("https://saunalogs.herokuapp.com/upload",{params:localStorage.getItem("username")}
         ).then((res)=>{
             props.setList(res.data);
             setSauna("")
@@ -118,9 +119,8 @@ export default function CustomizedDialogs(props) {
 
   return (
     <div>
-      <Button variant="outlined" color="primary" onClick={handleClickOpen} fullWidth={true}>
-        サウナを追加
-      </Button>
+      <FloatingActionButtons onclick={handleClickOpen}/>
+
       <Dialog onClose={handleClose} aria-labelledby="customized-dialog-title" open={open} maxWidth={true} >
         <DialogTitle id="customized-dialog-title" onClose={close} fullWidth={true}>
           サウナログを追加しよう！

@@ -1,7 +1,7 @@
 import React,{useState,useEffect,useContext} from 'react';
 import {useHistory} from "react-router-dom";
 import "./navbar.css";
-import {LoginContext}from"../components/helper/context";
+import {LoginContext}from"./context";
 import Axios from"axios"
 import { responsiveFontSizes } from '@material-ui/core';
 
@@ -32,7 +32,7 @@ const Navbar = () => {
             <a href="/register">登録</a>
             </>:           
             <>
-            <a href="/profile">profile</a>
+            <a href="/logs">過去サログ</a>
             <a onClick={logout}>ログアウト</a>
             </>}
               

@@ -5,6 +5,16 @@ import { Doughnut } from 'react-chartjs-2';
 
 function　Chart(props) {
 
+
+   const options = {
+        plugins: {
+          // Change options for ALL labels of THIS CHART
+          datalabels: {
+            color: '#36A2EB'
+          }
+        }
+      }
+
   const graphData= {
     labels: [
       // 軸ラベル
@@ -18,6 +28,8 @@ function　Chart(props) {
       {
         data: [props.totaltotonoi, (365-props.totaltotonoi), ],
         label: '月別合計降水量(mm)',
+        backgroundColor: ['#3da9fc', "#90b4ce",],
+    
         
       },
     ],
@@ -37,7 +49,7 @@ function　Chart(props) {
             text: 'ITEMS',
             color: '#666666',
             font: {
-              size: 30,
+              size: 5,
             },
           },
           {
@@ -53,7 +65,8 @@ function　Chart(props) {
     <div className="App">
      <div className="chart">
       {/* グラフコンポーネントの呼び出し */}
-      <Doughnut data={graphData}  height={400} width={400} options={{ maintainAspectRatio: false }} options={doughnutOptions}/>
+      <Doughnut data={graphData}  height={300} width={400} options={{ maintainAspectRatio: false }} />
+      
         </div>
         <div className="caption">{props.totaltotonoi}/365</div>
     </div>

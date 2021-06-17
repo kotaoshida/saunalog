@@ -1,7 +1,7 @@
 import React,{useState,useContext}from 'react';
 import "./login.css"
 import {useHistory} from "react-router-dom";
-import {LoginContext}from"../../components/helper/context";
+import {LoginContext}from"../../components/context";
 import Axios from "axios"
 import BasicTextFields from"../../components/testfield"
 import ContainedButtons from"../../components/button"
@@ -19,7 +19,7 @@ const Login = () => {
     let history = useHistory();
 
     const login = ()=>{
-        Axios.post("http://localhost:3001/user/login",{
+        Axios.post("https://saunalogs.herokuapp.com/user/login",{
             username:username,
             password:password,
             },{ withCredentials: true }).then((res)=>{

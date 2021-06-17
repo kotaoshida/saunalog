@@ -17,10 +17,19 @@ const useStyles = makeStyles((theme) => ({
     width: '90%',
     maxWidth: '100%',
     backgroundColor: theme.palette.background.paper,
+    
   },
   inline: {
     display: 'inline',
   },
+     item:{
+      [theme.breakpoints.down('sm')]: {
+      display:"flex",
+      flexDirection:"column"
+     
+     }
+  },
+
 }));
 
 export default function AlignItemsList(props) {
@@ -31,7 +40,7 @@ export default function AlignItemsList(props) {
         {props.list.map((val)=>{
             return(
             <div>
-            <ListItem alignItems="flex-start">
+            <ListItem alignItems="flex-start" >
             <ListItemAvatar>
               <Avatar alt="Remy Sharp" src="https://maps.google.com/maps/contrib/107835050627179424062\" />
             </ListItemAvatar>
@@ -46,7 +55,7 @@ export default function AlignItemsList(props) {
                     color="textPrimary"
                   >
                     <div>日付：{val.date}</div>
-                <div className="rate">
+                <div className={classes.item}>
                  <div className="saunaroom">
                     サ室の評価
                  <Rating name="size-small" defaultValue={val.saunaroomrate} value={val.saunaroomrate}readOnly/>
