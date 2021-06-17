@@ -15,13 +15,23 @@ const useStyles = makeStyles((theme) => ({
     textAlign:"center",
     paddingLeft:'10%',
     fontSize:"20px",
+    [theme.breakpoints.down('sm')]: {
+        width:250,
+        display:"flex",
+       flexDirection:"column",
+       justifyContent:"flex-start",
+       paddingLeft:'0%',
+        
+       },
   },
 list:{
     display:"flex",
     justifyContent: "space-between",
     [theme.breakpoints.down('sm')]: {
        display:"flex",
-       flexDirection:"column"
+       flexDirection:"column",
+       justifyContent:"flex-start"
+       
       },
 }
 

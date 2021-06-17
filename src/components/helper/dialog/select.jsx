@@ -13,9 +13,19 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(2),
     minWidth: 200,
     display:"flex",
-    flexDirection:"row"
+    flexDirection:"row",
+    
+ 
+      
+     },
+     form:{
+      [theme.breakpoints.down('sm')]: {
+        display:"flex",
+       flexDirection:"column",
+     }
 
   },
+
 }));
 
 const google = window.google;
@@ -70,7 +80,7 @@ export default  function GroupedSelect(props) {
 
   return (
     
-    <div className="form">
+    <div className={classes.form}>
     <div>
       <FormControl className={classes.formControl} >
         <InputLabel htmlFor="grouped-native-select1" minWidth="2000">都道府県</InputLabel>

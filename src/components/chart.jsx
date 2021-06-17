@@ -65,7 +65,7 @@ function　Chart(props) {
     <div className="App">
      <div className="chart">
       {/* グラフコンポーネントの呼び出し */}
-      <Doughnut data={graphData}  height={300} width={400} options={{ maintainAspectRatio: false }} />
+      <Doughnut data={graphData}  height={300} width={300} options={{ maintainAspectRatio: false }} />
       
         </div>
         <div className="caption">{props.totaltotonoi}/365</div>
