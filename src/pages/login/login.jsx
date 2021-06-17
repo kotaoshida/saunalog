@@ -22,12 +22,11 @@ const Login = () => {
         Axios.post("https://saunalogs.herokuapp.com/user/login",{
             username:username,
             password:password,
-            },{ withCredentials: true }).then((res)=>{
+            }).then((res)=>{
             if(res){
                 setLogined(true);
                 localStorage.setItem("username",username);
                 history.push("/");
-                console.log("a")
                 console.log(res)
             }else{
                 setMessage(res.data.message);
