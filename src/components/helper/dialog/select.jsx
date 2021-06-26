@@ -19,6 +19,8 @@ const useStyles = makeStyles((theme) => ({
       
      },
      form:{
+       display:"flex",
+       flexDirection:"row",
       [theme.breakpoints.down('sm')]: {
         display:"flex",
        flexDirection:"column",

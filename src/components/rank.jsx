@@ -9,14 +9,14 @@ import Divider from '@material-ui/core/Divider';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width:400,
+    width:600,
     maxWidth: "100%",
     backgroundColor: theme.palette.background.paper,
     textAlign:"center",
     paddingLeft:'10%',
     fontSize:"20px",
     [theme.breakpoints.down('sm')]: {
-        width:250,
+        width:"100%",
         display:"flex",
        flexDirection:"column",
        justifyContent:"flex-start",
@@ -46,7 +46,7 @@ export default function InsetList(props) {
         return(
             <div className={classes.list}>
         <List className={classes.root}>
-            <h3>行ったサウナランキング</h3>
+            <h3>{localStorage.getItem("username")}さんが行った多く行ったサウナ</h3>
             {props.ranking.map((val)=>{
                 a+=1
                 if(a>=4)return
@@ -61,7 +61,7 @@ export default function InsetList(props) {
         </List>
 
          <List className={classes.root}>
-         <h3>評価が高かったサウナ</h3>
+         <h3>{localStorage.getItem("username")}さんの評価が高かったサウナ</h3>
          {props.totalrate.map((val)=>{
              b+=1
              if(b>=4)return

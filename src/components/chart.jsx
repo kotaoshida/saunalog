@@ -19,15 +19,15 @@ function　Chart(props) {
     labels: [
       // 軸ラベル
       // 各ラベルを配列にすることで軸ラベルが改行されて表示される
-      ['ととのった回数'],
-      ["ととのわなかった日"],
+      ['今年サウナに行った日数'],
+      ["今年サウナに行かなかった日数"],
 
     ],
     datasets: [
       // 表示するデータセット
       {
         data: [props.totaltotonoi, (365-props.totaltotonoi), ],
-        label: '月別合計降水量(mm)',
+        label: 'サウナ',
         backgroundColor: ['#3da9fc', "#90b4ce",],
     
         
@@ -69,6 +69,7 @@ function　Chart(props) {
       
         </div>
         <div className="caption">{props.totaltotonoi}/365</div>
+        <h3>今年サウナに{props.totaltotonoi}回行っています。</h3>
     </div>
   );
 }

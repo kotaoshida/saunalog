@@ -1,26 +1,22 @@
 import React,{useState,useEffect,useContext} from 'react';
-import {useHistory} from "react-router-dom";
+import {useHistory,withRouter,MemoryRouter} from "react-router-dom";
 import "./navbar.css";
 import {LoginContext}from"./context";
 import Axios from"axios"
 import { responsiveFontSizes } from '@material-ui/core';
 
-const Navbar = () => {
+export const Navbar = withRouter(props => {
     
     
-    const history =useHistory();
+    
     const {logined,setLogined}=useContext(LoginContext);
     
-    const logout = async()=>{
-        
-            Axios.get("https://localhost:3001/user/logout",{withCredentials:"include"})
- 
+    const logout =()=>{
+        localStorage.clear()
+        props.history.push("/")
     }
 
-    if(logined){
-        localStorage.setItem("login",logined);
 
-    }
 
     return (
         <div className="navbar"> 
@@ -37,8 +33,9 @@ const Navbar = () => {
             </>}
               
         </div>
+
     );
-};
+    });
 
 
 

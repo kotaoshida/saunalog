@@ -26,7 +26,7 @@ export default function FloatingActionButtons(props) {
     <div>
       <div>
         <Fab variant="extended" color="primary" aria-label="add" className={classes.margin} onClick={props.onclick}>
-          <NavigationIcon className={classes.extendedIcon} />
+        <AddIcon />
           サログを追加する
         </Fab>
       </div>

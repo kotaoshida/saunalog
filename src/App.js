@@ -16,8 +16,9 @@ function App() {
   return (
     <LoginContext.Provider value={{logined,setLogined}}>
       <>
-   <Navbar/>
+   
     <Router>
+    <Navbar/>
         <Route path="/" exact render={()=><Home/>}/>
         <Route path="/register" exact render={()=><Register/>}/>
         <Route path="/about" exact render={()=><Login/>}/>

@@ -91,7 +91,7 @@ const Home = () => {
         <div className="home">
             {localStorage.getItem("login")?
             <>
-            <CustomizedDialogs/>
+            <CustomizedDialogs setList={setList}/>
             <h1>{localStorage.getItem("username")}さんのサウナデータ</h1>
           <div className="test">
           <Chart totaltotonoi={totaltotonoi}/>

@@ -23,6 +23,8 @@ const useStyles = makeStyles((theme) => ({
     display: 'inline',
   },
      item:{
+      display:"flex",
+      flexDirection:"row",
       [theme.breakpoints.down('sm')]: {
       display:"flex",
       flexDirection:"column"
@@ -41,9 +43,6 @@ export default function AlignItemsList(props) {
             return(
             <div>
             <ListItem alignItems="flex-start" >
-            <ListItemAvatar>
-              <Avatar alt="Remy Sharp" src="https://maps.google.com/maps/contrib/107835050627179424062\" />
-            </ListItemAvatar>
             <ListItemText
               primary={val.sauna}
               secondary={
@@ -54,7 +53,7 @@ export default function AlignItemsList(props) {
                     className={classes.inline}
                     color="textPrimary"
                   >
-                    <div>日付：{val.date}</div>
+                    <div>日付：{val.date.substr(0,10)}</div>
                 <div className={classes.item}>
                  <div className="saunaroom">
                     サ室の評価

@@ -19,7 +19,7 @@ export default function MaterialUIPickers(props) {
         <KeyboardDatePicker
           margin="normal"
           id="date-picker-dialog"
-          label="Date picker dialog"
+          label="このサウナに行った日"
           format="yyyy-MM-dd"
           value={props.date}
           onChange={props.setDate}
