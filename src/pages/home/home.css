@@ -28,3 +28,15 @@ text-align: center;
   a:visited{
     color: inherit;
   }
+
+  @media screen and (max-width: 480px) {
+	/* 480px以下に適用されるCSS（スマホ用） */
+    .home{
+       font-size:small;
+      }
+    br.sp{
+        display:inline;
+    } 
+
+       
+}

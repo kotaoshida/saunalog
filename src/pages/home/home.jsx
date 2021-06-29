@@ -101,12 +101,11 @@ const Home = () => {
             :
             <>
             <h2>サログとは</h2>
-            <h3>サ室の熱さの感じ方や水風呂との相性は人それぞれ。<br/>口コミや人気のサウナにとらわれずあなただけの「ととのい」を見つけよう。</h3>
+            <h3>サ室の熱さの感じ方や水風呂との相性は人それぞれ。<br/>口コミや人気のサウナにとらわれず<br className="sp"/>あなただけの「ととのい」を見つけよう。</h3>
             <ContainedButtons text="ログインはこちら" func={()=>{history.push("/login")}}/>
             <ContainedButtons text="新規登録はこちら" func={()=>{history.push("/register")}}/>
             </>}
           
-            
     
         </div>
     );

@@ -14,20 +14,32 @@ export const Navbar = withRouter(props => {
         localStorage.clear()
         props.history.push("/")
     }
+    const login =()=>{
+        props.history.push("/login")
+    }
+    const home =()=>{
+        props.history.push("/")
+    }
 
+    const register =()=>{
+        props.history.push("/register")
+    }
 
+    const logs =()=>{
+        props.history.push("/logs")
+    }
 
     return (
         <div className="navbar"> 
             <h1>サログ</h1>
-            <a href="/">home</a>
+            <a onClick={home}>home</a>
             {!localStorage.getItem("login")? 
             <>
-            <a href="/login">ログイン</a>
-            <a href="/register">登録</a>
+            <a onClick={login}>ログイン</a>
+            <a onClick={register}>登録</a>
             </>:           
             <>
-            <a href="/logs">過去サログ</a>
+            <a onClick={logs}>過去サログ</a>
             <a onClick={logout}>ログアウト</a>
             </>}
               
