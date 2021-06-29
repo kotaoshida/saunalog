@@ -1,32 +1,39 @@
 import React,{useState} from 'react';
+import {useHistory,withRouter,MemoryRouter} from "react-router-dom";
 import "./register.css"
 import Axios from "axios";
 import ContainedButtons from"../../components/button"
 import BasicTextFields from"../../components/testfield"
 import SimpleAlerts from"../../components/err"
 
-function Register () {
+
+function Register (props) {
     const [username,setUsername]=useState("");
     const [password,setPassword]=useState("");
     const [message,setMessage]=useState(false);
-
+    const history = useHistory();
     const regist = ()=>{
-        Axios.post(" https://saunalogs.herokuapp.com/user/register",{
+        Axios.post("https://saunalogs.herokuapp.com/user/register",{
             username:username,
             password:password,
             }).then((res)=>{
-            setMessage(res.data.message)
-            console.log(res)
+                if(res.data.message){
+            setMessage(res.data.message)}
+            else{
+                history.push("/login")
+            }
+            
             
                 })
     }
 
     return (
         <div className="Register">
-             
+              
             <div className="Registwrap">
+                <h2>まずはサログに登録しよう！</h2>
             {message?<>
-                    <SimpleAlerts message={message}/>
+                    <SimpleAlerts message={message} fullWidth={true}/>
                 </>:<></>}
             <div className="RegisterForm">
 
@@ -45,4 +52,4 @@ function Register () {
     )
 }
 
-export default Register;
+export default withRouter (Register);

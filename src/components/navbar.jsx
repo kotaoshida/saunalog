@@ -8,7 +8,6 @@ import { responsiveFontSizes } from '@material-ui/core';
 export const Navbar = withRouter(props => {
     
     
-    
     const {logined,setLogined}=useContext(LoginContext);
     
     const logout =()=>{
@@ -24,7 +23,7 @@ export const Navbar = withRouter(props => {
             <a href="/">home</a>
             {!localStorage.getItem("login")? 
             <>
-            <a href="/about">ログイン</a>
+            <a href="/login">ログイン</a>
             <a href="/register">登録</a>
             </>:           
             <>

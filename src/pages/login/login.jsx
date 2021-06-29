@@ -40,6 +40,7 @@ const Login = () => {
         <div className="login">
         
              <div className="loginForm">
+                 <h2>ログインしよう！</h2>
              {message?<>
                     <SimpleAlerts message={message}/>
                 </>:<></>}

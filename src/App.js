@@ -21,7 +21,7 @@ function App() {
     <Navbar/>
         <Route path="/" exact render={()=><Home/>}/>
         <Route path="/register" exact render={()=><Register/>}/>
-        <Route path="/about" exact render={()=><Login/>}/>
+        <Route path="/login" exact render={()=><Login/>}/>
         <Route path="/logs" exact render={()=><SaunaLogList/>}/>
 
     </Router>

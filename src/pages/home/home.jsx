@@ -1,14 +1,11 @@
 import React ,{useEffect,useState}from 'react';
-import{Image}from"cloudinary-react"
 import Axios from"axios"
 import CustomizedDialogs from "../../components/helper/dialog/dialog"
-import AlignItemsList from"../../components/list"
 import Chart from"../../components/chart"
-import CalendarExample from"../../components/calender"
 import "./home.css"
 import InsetList from "../../components/rank"
-import { CompassCalibrationOutlined } from '@material-ui/icons';
-
+import ContainedButtons from"../../components/button"
+import {useHistory,withRouter,MemoryRouter} from "react-router-dom";
 
 const Home = () => {
 
@@ -19,6 +16,8 @@ const Home = () => {
     let totonoi={};
     const[ranking,setRanking]=useState([])
     const[totalrate,setTotalrate]=useState([])
+    const history = useHistory();
+
 
     useEffect(()=>{
         Axios.get("https://saunalogs.herokuapp.com/upload",{params:username}
@@ -77,8 +76,6 @@ const Home = () => {
                 return 0;
             });
                 setTotalrate(...totalrate,a);
-           
-            
             
         })
 
@@ -95,7 +92,7 @@ const Home = () => {
             <h1>{localStorage.getItem("username")}さんのサウナデータ</h1>
           <div className="test">
           <Chart totaltotonoi={totaltotonoi}/>
-          {/* <CalendarExample　className="calender" /> */}
+          
           <div className="rank">
           <InsetList ranking={ranking} totalrate={totalrate} />
           </div>
@@ -103,9 +100,10 @@ const Home = () => {
             </>
             :
             <>
-            <h2>サログにログインしよう！</h2>
-            <a href="/about">ログインはこちら</a>
-            <a href="/register">登録こちら</a>
+            <h2>サログとは</h2>
+            <h3>サ室の熱さの感じ方や水風呂との相性は人それぞれ。<br/>口コミや人気のサウナにとらわれずあなただけの「ととのい」を見つけよう。</h3>
+            <ContainedButtons text="ログインはこちら" func={()=>{history.push("/login")}}/>
+            <ContainedButtons text="新規登録はこちら" func={()=>{history.push("/register")}}/>
             </>}
           
             
