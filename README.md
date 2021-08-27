@@ -2,8 +2,8 @@
 サログ
  
 ##ローカルサーバーで起動
-npm install @material-ui/pickers
-npm start
+- npm install @material-ui/pickers
+- npm start
  
 ## 簡単な説明
  サウナーのためのサウナ記録アプリです。
