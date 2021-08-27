@@ -1,7 +1,7 @@
 # アプリケーション名
 サログ
  
-##ローカルサーバーで起動
+## ローカルサーバーで起動
 - step1 npm install @material-ui/pickers
 - step2 npm start
  
